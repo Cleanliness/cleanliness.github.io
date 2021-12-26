@@ -1,9 +1,61 @@
 <html>
-  facegen test
+  <div id="sheet-container">
+    <canvas id="sheet" width="400" height="400"></canvas>
+  </div>
+  <style type='text/css'>
+    #sheet-container {
+        border:1px solid black;
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+    }
+
+    .pbContainer {
+        padding-top: 1%;
+    }
+
+    .actionContainer {
+      padding-top: 1%;
+    }
+
+    .paintButton {
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
   <head>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js'></script>
+    <script src="facegen.js"></script>
+
   </head>
   <body>
-    <main>
-    </main>
+    <div class="pbContainer">
+      <button type="button" class="paintButton" id="bg" style="background-color: black;" onclick="pbClick(this)">bg</button>
+      <button type="button" class="paintButton" id="mouth" style="background-color: red; border: 2px solid #4f4f4f;" onclick="pbClick(this)">mouth</button>
+      <button type="button" class="paintButton" id="eye" style="background-color: green;" onclick="pbClick(this)">eye</button>
+      <button type="button" class="paintButton" id="nose" style="background-color: blue;" onclick="pbClick(this)">nose</button>
+      <button type="button" class="paintButton" id="face" style="background-color: #a0a0a0;" onclick="pbClick(this)">face</button>
+      <button type="button" class="paintButton" id="hair" style="background-color: yellow; color: black;" onclick="pbClick(this)">hair</button>
+      <button type="button" class="paintButton" id="eyebrow" style="background-color: #ff00ff;" onclick="pbClick(this)">eyebrow</button>
+      <button type="button" class="paintButton" id="ear" style="background-color: #00ffff;" onclick="pbClick(this)">ear</button>
+      <button type="button" class="paintButton" id="teeth" style="background-color: #ffffff; color: black;" onclick="pbClick(this)">teeth</button>
+      <button type="button" class="paintButton" id="beard" style="background-color: #ffc0c0; color: black;" onclick="pbClick(this)">beard</button>
+      <button type="button" class="paintButton" id="glasses" style="background-color: #008080;" onclick="pbClick(this)">glasses</button>
+    </div>
+
+  <div class="sliderContainer">
+    <span>thickness</span>
+    <input type="range" min="1" max="100" value="7" class="slider" id="myRange" onclick="sliderClick(this)">
+  </div>
+
+    <div class="actionContainer">
+      <button type="button" class="actionButton" onclick="clearClick()">Clear</button>
+      <button type="button" class="actionButton" onclick="convertClick()">Convert</button>
+    </div>
+
   </body>
 </html>
