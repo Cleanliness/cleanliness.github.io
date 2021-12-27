@@ -66,9 +66,18 @@ function convertClick(){
     // const win = window.open(dataUrl, '_blank');
 }
 
+async function loadModel(){
+    const sess = await ort.InferenceSession.create("./unet-patchgan.onnx");
+    console.log(sess);
+}
+loadModel();
 var canvas = new fabric.Canvas('sheet');
 canvas.setBackgroundColor("#000000", canvas.renderAll.bind(canvas));
 canvas.isDrawingMode = true;
 canvas.freeDrawingBrush.width = 7;
 canvas.freeDrawingBrush.color = "#ff0000";
 console.log(canvas);
+
+
+
+
