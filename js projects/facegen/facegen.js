@@ -59,10 +59,6 @@ async function convertClick(){
     tmpCtx.drawImage(tempCanvas, 0, 0);
 
     // crop 200x200
-    tempCanvas2 = document.createElement("CANVAS");
-    tempCanvas2.width = 200;
-    tempCanvas2.height = 200;
-    var tmpCtx2 = tempCanvas2.getContext("2d");
     imgData = tmpCtx.getImageData(0, 0, 200, 200);
 
     // get rgb values
@@ -81,6 +77,7 @@ async function convertClick(){
     input_img = input_img.concat(b_in);
     console.log("input image printttt")
     console.log(input_img);
+
     // run through model
     input_img = new ort.Tensor('float32', input_img, [1, 3, 200, 200]);
     console.log(input_img);
@@ -105,6 +102,16 @@ async function convertClick(){
     var ctx = out_canv.getContext("2d");
     var idat = ctx.createImageData(200, 200);
     idat.data.set(model_out_img);
+
+    var tempCanvas2 = document.createElement("CANVAS");
+    tempCanvas2.width = 400;
+    tempCanvas2.height = 400;
+    var tmpCtx2 = tempCanvas2.getContext("2d");
+    tmpCtx2.putImageData(idat, 0, 0);
+    tmpCtx2.scale(2, 2);
+    tmpCtx2.drawImage(tempCanvas2, 0, 0);
+
+    var idat = tmpCtx2.getImageData(0, 0, 400, 400);
     ctx.putImageData(idat, 0, 0);
 
     console.log(model_out_img);
