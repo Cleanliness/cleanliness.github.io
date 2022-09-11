@@ -6,6 +6,9 @@ body{
     background-color: rgb(255, 255, 255);
 }
 
+canvas {
+    display: block;
+}
 
 #page_title_container{
     margin: auto;
@@ -27,4 +30,40 @@ body{
     font-style: italic;
 }
 
+#section{
+    padding: 10px;
+}
 
+.section_title{
+    font-family: 'Segoe UI';
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+.section_container{
+    margin-bottom: 10px;
+    width: 30%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.project_container{
+    margin: 5px;
+}
+
+.proj_link{
+    box-shadow: inset 0 0 0 0 black;
+    text-decoration: none;
+    color:black;
+    padding: 2px;
+    font-family: 'Segoe UI';
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.proj_link:hover {
+    color: white;
+    box-shadow: inset 200px 0 0 0 black;
+    ;
+}
