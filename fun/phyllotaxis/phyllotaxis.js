@@ -22,6 +22,7 @@ class Floret{
 		
 		// draw floret on screen
 		fill(this.color);
+		noStroke();        // makes this less laggy
 		circle(x, y, this.curr_size);
 	}
 	
