@@ -117,7 +117,7 @@ class FloretManager{
 }
 
 // setup
-function ptax_setup() {
+function hsetup() {
 	canvas = createCanvas(windowWidth, windowHeight);
 	canvas.position(0,0);
 	canvas.style('z-index', '-1');
@@ -127,7 +127,7 @@ function ptax_setup() {
 }
 
 // draw
-function ptax_draw() {
+function hdraw() {
 	background(255);
 	f.step();
 	f.draw();

@@ -7,8 +7,6 @@ class Boid{
 		this.dx = Math.cos(angle)*1.7;
 		this.dy = Math.sin(angle)*1.7;
 		
-		console.log(180*angle/Math.PI);
-		
 		this.id = id;
 		this.speedlim = 6;
 	}
@@ -170,6 +168,7 @@ class Boid{
 	// draw boid
 	draw(){
 		push();
+		fill('black');
 		noStroke();
 		translate(this.x, this.y);
 		rotate(2*Math.PI - this.getAngle());
@@ -251,9 +250,11 @@ class BoidManager{
 	
 }
 
-function setup() {
-	createCanvas(windowWidth, windowHeight);
-	background(100);
+function hsetup() {
+	canvas = createCanvas(windowWidth, windowHeight);
+	canvas.position(0,0);
+	canvas.style('z-index', '-1');
+	background('rgb(255,255,255)');
 	
 	var i = 0;
 	var boids = [];
@@ -269,7 +270,7 @@ function setup() {
 	bmanager = new BoidManager(boids);
 }
 
-function draw() {
-	background(0);
+function hdraw() {
+	background('rgb(255,255,255)');
 	bmanager.update();
 }

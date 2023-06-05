@@ -27,6 +27,7 @@ canvas {
     text-align: center;
     font-size: 70px;
     font-family: Helvetica;
+    margin-bottom: 5px;
 }
 
 #title_desc{
