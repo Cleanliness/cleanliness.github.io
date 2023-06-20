@@ -60,7 +60,7 @@ class FloretManager{
 		this.n = 0;
 		this.scale = 16;
 		this.scale_dx = 0;
-		this.floret_lim = 500;
+		this.floret_lim = 400;
 		
 		this.sleep_lim = 100;
 		this.sleep_counter = 0;

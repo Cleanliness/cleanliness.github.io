@@ -3,16 +3,22 @@
 // ====================
 
 class Pixel{
-	constructor(x, y, state){
+	constructor(x, y, state, xcoord, ycoord){
 		this.x = x;
 		this.y = y;
 		this.state = state;
+
+		this.xcoord=xcoord;
+		this.ycoord=ycoord;
 	}
 	
 	draw(){
 		fill(color(this.state, this.state, this.state));
 		noStroke();
-		square(this.x, this.y, PIX_R);
+
+		let draw_x = (windowWidth - PIX_R*28)/2 + this.xcoord*PIX_R;
+		let draw_y = (windowHeight - PIX_R*28)/2 + this.ycoord*PIX_R;
+		circle(draw_x, draw_y, PIX_R-13);
 	}
 }
 
@@ -32,18 +38,12 @@ class Grid{
 		let x = (windowWidth - PIX_R*J)/2
 		let y = (windowHeight - PIX_R*J)/2
 		
-		let curr_x = x;
-		let curr_y = y;
 		for (let i=0; i<J; i++){
 			for (let j=0; j<J; j++){
 				let s = 255;
-				let p = new Pixel(curr_x, curr_y, s);
-				
+				let p = new Pixel(x, y, s, j, i);
 				this.pixels.push(p);
-				curr_x += PIX_R;
 			}
-			curr_x = x;
-			curr_y += PIX_R;
 		}
 	}
 	
@@ -165,6 +165,11 @@ function shuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
+}
+
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 
