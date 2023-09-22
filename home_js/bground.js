@@ -11,6 +11,10 @@ backgrounds = [
 		main: "fun/boids/boid.js",
 	 	dep: []
 	},
+	{
+		main: "fun/perlin/perlin.js",
+	 	dep: []
+	}
 ];
 
 hbb = null;
