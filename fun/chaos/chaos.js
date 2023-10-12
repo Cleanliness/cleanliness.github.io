@@ -73,6 +73,9 @@ function update(){
     let new_x = coefs[0]*x*x + coefs[1]*y*y + coefs[2]*x*y + coefs[3]*t*t + coefs[4]*x*t + coefs[5]*y*t + coefs[6]*t + coefs[7]*x + coefs[8]*y + coefs[9];
     let new_y = coefs[10]*x*x + coefs[11]*y*y + coefs[12]*x*y + coefs[13]*t*t + coefs[14]*x*t + coefs[15]*y*t + coefs[16]*t + coefs[17]*x + coefs[18]*y + coefs[19];
 
+    if (isNaN(new_x) || isNaN(new_y)){
+      break;
+    }
     x_old = x;
     y_old = y;
     x = new_x;
