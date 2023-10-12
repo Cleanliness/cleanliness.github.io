@@ -14,6 +14,10 @@ backgrounds = [
 	{
 		main: "fun/perlin/perlin.js",
 	 	dep: []
+	},
+	{
+		main: "fun/chaos/chaos.js",
+		dep: []
 	}
 ];
 
