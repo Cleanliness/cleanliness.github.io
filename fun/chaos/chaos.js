@@ -1,7 +1,6 @@
-particles = [];
 t = -0.5;
 coefs = new Array(20); // coefficients of the polynomial
-iters = 5000; // number of iterations
+iters = 3000; // number of iterations
 x_i = t;
 y_i = t;
 
@@ -32,21 +31,6 @@ p2 = [
   0.4483480470040575,
   -0.7367844929312053
 ];
-class CPoint{
-  constructor(x, y){
-    this.x = x;
-    this.y = y;
-  }
-
-  draw(){
-    noStroke();
-
-    let x = 100*this.x + windowWidth/2;
-    let y = 100*this.y + windowHeight/2;
-    circle(x, y, 4);
-
-  }
-}
 
 function init_coefs(){
   for (let i = 0; i < 20; i++){
@@ -58,8 +42,8 @@ function update(){
   noStroke(); 
   fill(255, 6);
   rect(-width/2, -height/2, width, height); 
-  stroke(0);
-
+  // stroke(0);
+  
   if (t > 1.0){
     init_coefs();
     t = -0.5;
@@ -69,11 +53,12 @@ function update(){
   let y = y_i;
   let x = x_i;
   
+  fill(0);
   for (let i = 0; i < iters; i++){
     let new_x = coefs[0]*x*x + coefs[1]*y*y + coefs[2]*x*y + coefs[3]*t*t + coefs[4]*x*t + coefs[5]*y*t + coefs[6]*t + coefs[7]*x + coefs[8]*y + coefs[9];
     let new_y = coefs[10]*x*x + coefs[11]*y*y + coefs[12]*x*y + coefs[13]*t*t + coefs[14]*x*t + coefs[15]*y*t + coefs[16]*t + coefs[17]*x + coefs[18]*y + coefs[19];
 
-    if (isNaN(new_x) || isNaN(new_y)){
+    if (isNaN(new_x) || isNaN(new_y) || new_x > width/2 || new_x < -width/2 || new_y > height/2 || new_y < -height/2){
       break;
     }
     x_old = x;
@@ -81,12 +66,11 @@ function update(){
     x = new_x;
     y = new_y;
 
-    point(300*x, 300*y);
+    circle(300*x, 300*y, 2);
 
-    // line(100*x_old + windowWidth/2, 100*y_old + windowHeight/2, 100*x + windowWidth/2, 100*y + windowHeight/2);
+    // line(300*x_old, 300*y_old, 300*x, 300*y);
   }
 
-  console.log([x, y]);
   t += 0.003;
   x_i = t;
   y_i = t;
@@ -103,7 +87,6 @@ function hsetup() {
   strokeWeight(2); 
   // init chaos
   init_coefs();
-  particles.push(new CPoint(2, 0.4));
 }
 
 // draw
