@@ -18,6 +18,10 @@ backgrounds = [
 	{
 		main: "fun/chaos/chaos.js",
 		dep: []
+	},
+	{
+		main: "fun/chladni/sound.js",
+		dep: []
 	}
 ];
 
