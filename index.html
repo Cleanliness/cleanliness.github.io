@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <div class="cursor"></div>
+    <div class="cursor_ring"></div>
+    <div class="clickring"></div>
     <head>
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
@@ -13,7 +16,19 @@
         </div>
 
         <div id="section">
-            <!-- Projects -->
+            <!-- Research -->
+            <div class="section_container">
+                <div class="section_title_container">
+                    <h2 class="section_title">Research</h2>
+                </div>
+                <div class="project_container">
+                    <a class="proj_link" href="https://github.com/uoguelph-mlrg/PROTAX-GPU">Bioinformatics</a>
+                </div>
+                <div class="project_container">
+                    <a class="proj_link" href="https://github.com/Cleanliness/TACE-logbook">Deep Learning</a>
+                </div>
+            </div>
+           <!-- Projects -->
             <div class="section_container">
                 <div class="section_title_container">
                     <h2 class="section_title">Projects</h2>
@@ -32,8 +47,7 @@
                 </div>
             </div>
         
-
-            <!-- Not projects -->
+            <!-- fun -->
             <div class="section_container">
                 <div class="section_title_container">
                     <h2 class="section_title">Misc</h2>
@@ -49,14 +63,12 @@
                     <a class="proj_link" href="fun/phyllotaxis/phylo.html">Phyllotaxis</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="fun/pong/pong.html">Pong</a>
-                </div>
-                <div class="project_container">
                     <a class="proj_link" href="https://cleanliness.notion.site/Home-6cb3899f107a440eac89ad860f4dfe8d">ML notes</a>
                 </div>
             </div>
         </div>
         
-
+    <!-- cursor loading depends on prior elements -->
+    <script src="home_js/cursor_setup.js"></script>
     </body>
 </html>
