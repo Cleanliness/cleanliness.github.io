@@ -16,12 +16,10 @@ canvas {
 }
 
 #page_title_container{
-    margin: auto;
+    position: fixed;
+    left: 32.5%;
+    top: 4%;
     width: 35%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -29,59 +27,66 @@ canvas {
     text-align: center;
     font-size: 100px;
     font-family: "Helvetica";
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #title_desc{
     text-align: center;
     font-style: italic;
 }
-
+#section_parent{
+    height: 100vh;
+    width: 25%;
+    position: relative;
+    padding-left: 3.6%;
+}
 #section{
-    padding: 10px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     display: table;
     padding-left: 4%;
 }
 
 .section_title{
     font-family: 'Helvetica';
+    font-size: 3.8vh;
     margin-top: 2px;
     margin-bottom: 4px;
 }
 
 .section_title_container{
     padding: 4px;
-    font-size: 25px;
     border-bottom: solid;
     border-color: black;
     border-bottom-width: thick;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
+    margin-top: 20%;
 }
 
 .section_container{
-    margin-bottom: 10px;
-    padding: 10px;
     background-color: rgba(255, 255, 255, 0);
 }
 
 .project_container{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     margin-left: 4px;
 }
 
 .proj_link{
-    box-shadow: inset 0 0 0 0 black;
     text-decoration: none;
+    box-shadow: inset 0 0 0 0 black;
     color:black;
-    padding: 4px;
-    font-family: 'Helvetica';
-    font-weight: 1;
+    padding: 2%;
+    font-size: 1.7vh;
+    border: none;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .proj_link:hover {
     color: white;
-    box-shadow: inset 200px 0 0 0 black;
+    box-shadow: inset 220px 0 0 0 black;
 }
