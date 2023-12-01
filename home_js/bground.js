@@ -1,3 +1,25 @@
+hbb = null;
+mobile = 0;
+// don't do this on mobile
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	mobile = 1;
+}
+// load main script when its dependencies are all loaded
+d_loaded = 0;
+function check_deps(bg){
+	d_loaded += 1;
+	if (d_loaded == bg.dep.length){
+		let scriptEle = document.createElement("script");
+		scriptEle.setAttribute("src", bg.main);
+		document.head.appendChild(scriptEle);
+
+		scriptEle.addEventListener("load", () => {
+			hsetup();
+			hbb = hdraw;
+		});
+	}
+}
+
 backgrounds = [
 	{
 		main: "fun/hopfield/hopnet.js",
@@ -25,25 +47,12 @@ backgrounds = [
 	}
 ];
 
-hbb = null;
 
-// load main script when its dependencies are all loaded
-d_loaded = 0;
-function check_deps(bg){
-	d_loaded += 1;
-	if (d_loaded == bg.dep.length){
-		let scriptEle = document.createElement("script");
-		scriptEle.setAttribute("src", bg.main);
-		document.head.appendChild(scriptEle);
-
-		scriptEle.addEventListener("load", () => {
-			hsetup();
-			hbb = hdraw;
-		});
-	}
-}
 
 function setup() {
+	if (mobile == 1){
+		return;
+	}
 	// choose random item from background scripts
 	let bg = backgrounds[Math.floor(Math.random()*backgrounds.length)];
 
@@ -74,7 +83,6 @@ function setup() {
 }
 
 function draw() {
-
 	if (hbb != null){
 		hbb();
 	}
