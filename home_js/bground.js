@@ -1,5 +1,7 @@
 hbb = null;
 mobile = 0;
+BG_COLOR = [245, 241, 233]
+
 // don't do this on mobile
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	mobile = 1;

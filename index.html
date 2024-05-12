@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="cursor.css">
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
         <script src="home_js/bground.js"></script>
@@ -21,10 +22,10 @@
                     <h2 class="section_title">Research</h2>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="https://github.com/uoguelph-mlrg/PROTAX-GPU">Bioinformatics</a>
+                    <a class="proj_link" href="https://github.com/uoguelph-mlrg/PROTAX-GPU" data-hover-title="Bioinf" data-iframe-src="pages/hover_content/bioinf.html">Bioinformatics</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="https://github.com/Cleanliness/TACE-logbook">Deep Learning</a>
+                    <a class="proj_link" href="https://github.com/Cleanliness/TACE-logbook" data-hover-title="DL" data-iframe-src="pages/hover_content/dl.html">Deep Learning</a>
                 </div>
             </div>
            <!-- Projects -->
@@ -33,16 +34,16 @@
                     <h2 class="section_title">Projects</h2>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="fun/facegen/facegen.html">Labels To Face</a>
+                    <a class="proj_link" href="fun/facegen/facegen.html" data-hover-title="L2F" data-iframe-src="pages/hover_content/L2F.html" data-xy="400,250">Labels To Face</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="https://github.com/Cleanliness/NumberNN">NumberNN</a>
+                    <a class="proj_link" href="https://github.com/Cleanliness/NumberNN" data-hover-title="N3" data-iframe-src="pages/hover_content/N3.html">NumberNN</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="https://github.com/Cleanliness/ArrowEvolution">ArrowEvolution</a>
+                    <a class="proj_link" href="https://github.com/Cleanliness/ArrowEvolution" data-hover-title="Ar_evo" data-iframe-src="pages/hover_content/Ar_evo.html">ArrowEvolution</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="https://github.com/BazaarTicker/BazaarTicker">BazaarTicker</a>
+                    <a class="proj_link" href="https://github.com/BazaarTicker/BazaarTicker" data-hover-title="tik" data-iframe-src="pages/hover_content/tik.html">BazaarTicker</a>
                 </div>
             </div>
         
@@ -53,25 +54,33 @@
                 </div>
                 
                 <div class="project_container">
-                    <a class="proj_link" href="fun/boids/boid.html">Boids</a>
+                    <a class="proj_link" href="fun/boids/boid.html" data-hover-title="Boid" data-iframe-src="pages/hover_content/todo.html">Boids</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="fun/hopfield/hopnet.html">Hopfield Net</a>
+                    <a class="proj_link" href="fun/hopfield/hopnet.html" data-hover-title="hopnet" data-iframe-src="pages/hover_content/todo.html">Hopfield Net</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="fun/phyllotaxis/phylo.html">Phyllotaxis</a>
+                    <a class="proj_link" href="fun/phyllotaxis/phylo.html" data-hover-title="phylo" data-iframe-src="pages/hover_content/todo.html">Phyllotaxis</a>
                 </div>
                 <div class="project_container">
-                    <a class="proj_link" href="https://cleanliness.notion.site/Home-6cb3899f107a440eac89ad860f4dfe8d">ML notes</a>
+                    <a class="proj_link" href="https://cleanliness.notion.site/Home-6cb3899f107a440eac89ad860f4dfe8d" data-hover-title="notes" data-iframe-src="pages/hover_content/todo.html">ML notes</a>
                 </div>
             </div>
         </div>
         </div>
+
+    <div class="float_window">
+        <div class="float_window_content">
+            <iframe frameBorder="0" src="" class="float_window_iframe"></iframe>
+        </div>
+    </div>
+
     <div class="cursor"></div>
     <div class="cursor_ring"></div>
     <div class="clickring"></div>
 
-    <!-- cursor loading depends on prior elements -->
+    <!-- scripts that depend on prior elements -->
+    <script src="home_js/float_window.js"></script>
     <script src="home_js/cursor_setup.js"></script>
 
     </body>

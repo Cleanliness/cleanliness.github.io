@@ -4,9 +4,6 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     return;
 }
 
-// add cursor stylesheet to head
-document.head.innerHTML += '<link rel="stylesheet" href="cursor.css">';
-
 let HOVERABLES = ['proj_link'];         // hoverable class names
 let cur_r = 10;
 let ring_r = 20;
@@ -44,6 +41,7 @@ document.addEventListener('mousemove', function(e){
     }
 });
 document.addEventListener('mousedown', function(e){
+    clickring.style.display = 'flex';
     clickring.style.transform = `translate(${e.x-20}px, ${e.y-20}px) translate(-50%, -50%)`;
     clickring.style.width = 100 + 'px';
     clickring.style.height = 100 + 'px';

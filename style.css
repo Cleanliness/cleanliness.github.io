@@ -1,14 +1,16 @@
 /* hide all cursors */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');  /* helvetica-esque font */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');  /* code font */
 
 *{
-    font-family: Helvetica;
+    font-family: "Inter Tight", sans-serif;
 }
 
 body{
     background-color: rgb(255, 255, 255);
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
-
+    cursor: none;
 }
 
 canvas {
@@ -20,13 +22,12 @@ canvas {
     left: 32.5%;
     top: 4%;
     width: 35%;
-    background-color: rgba(255, 255, 255, 0);
 }
 
 #page_title{
     text-align: center;
     font-size: 100px;
-    font-family: "Helvetica";
+    font-family: "Inter Tight", sans-serif;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -47,11 +48,17 @@ canvas {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     display: table;
+    padding-right: 4%;
     padding-left: 4%;
+    padding-bottom: 4%;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 5px;
 }
 
 .section_title{
-    font-family: 'Helvetica';
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
     font-size: 3.8vh;
     margin-top: 2px;
     margin-bottom: 4px;
@@ -89,4 +96,60 @@ canvas {
 .proj_link:hover {
     color: white;
     box-shadow: inset 220px 0 0 0 black;
+}
+
+/* floating window for project overview */
+.float_window{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    max-width: 600px;
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+    border-style: dashed;
+    z-index: 100;
+    background-size: 22px 22px;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px);
+    background-color: rgb(235, 235, 235, 0.85);
+    transition: transform 0.2s ease-out;
+    display: none;
+
+    --float-title-content: "title";
+}
+
+.float_window::before{
+    content: var(--float-title-content);
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 100;
+    font-size: 14px;
+    padding: 5px;
+    padding-right: 25px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-10px, -10px);
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+    background-color: #313131;
+}
+
+
+
+.float_window_content img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.float_window_content p{
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.float_window_iframe{
+    padding-top: 10px;
+    border: none;
 }

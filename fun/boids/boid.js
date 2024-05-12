@@ -254,7 +254,7 @@ function hsetup() {
 	canvas = createCanvas(windowWidth, windowHeight);
 	canvas.position(0,0);
 	canvas.style('z-index', '-1');
-	background('rgb(255,255,255)');
+	background(255);
 	
 	var i = 0;
 	var boids = [];
@@ -271,6 +271,6 @@ function hsetup() {
 }
 
 function hdraw() {
-	background('rgb(255,255,255)');
+	background(255);
 	bmanager.update();
 }
