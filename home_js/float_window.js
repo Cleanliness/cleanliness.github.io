@@ -4,8 +4,8 @@
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     return;
 }
-
-let HOVERABLES = ['proj_link'];         // hoverable class names
+// hoverable class names
+let HOVERABLES = ['l2r_highlighted'];
 
 let cur_r = 10;
 let window = document.querySelector('.float_window');

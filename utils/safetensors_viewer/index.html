@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>Safetensors Viewer</h1>
+        <p> Prints out the header of a single safetensors file. Useful for getting a basic idea of model architecture.
+            Use the url from 'copy download link' for any safetensors file and paste it here. Any download link should
+            work provided it's not blocked by CORS.
+        </p>
+        <b> Some examples: </b>
+        <ul>
+            <li> https://huggingface.co/google-t5/t5-base/resolve/main/model.safetensors </li>
+            <li> https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors </li>
+        </ul>
+        <div id="input_section">
+            <label for="input_url">URL:</label>
+            <input type="text" id="input_url" name="input_url"><br><br>
+            <button id="view_btn" type="button">View</button>
+        </div>
+
+        <div id="result_section">
+            <h3>Result:</h3>
+            <pre id="result_container">
+            </pre>
+        </div>
+        
+        <!------------ scripts ------------>
+        <script
+                src="safetensors_viewer.js">
+        </script>
+    </body>
+</html>
